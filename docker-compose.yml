@@ -1,11 +1,11 @@
 x-db-env: &db-env
-  POSTGRES_DD: ${POSTGRES_DB:medusa-store}
-  POSTGRES_USER: ${POSTGRES_USER:postgres}
-  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:postgres}
+  POSTGRES_DD: ${POSTGRES_DB:-medusa-store}
+  POSTGRES_USER: ${POSTGRES_USER:-postgres}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
 
 x-app-env: &app-env
-  NODE_ENV: ${NODE_ENV:development}
-  DATABASE_URL: ${DATABASE_URL:postgres}
+  NODE_ENV: ${NODE_ENV:-development}
+  DATABASE_URL: ${DATABASE_URL:-postgres}
   REDIS_URL: ${REDIS_URL:"redis://redis:6379"}
 
 services:
